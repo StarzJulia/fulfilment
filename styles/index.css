@@ -287,3 +287,22 @@ body {
     width: 100%;
     object-fit: cover;
 }
+.form {
+    margin-bottom: 30px;
+}
+.form-fieldset {
+    display: inline-block;
+}
+@media screen and (max-width: 767px) {
+    .schedule__th {
+        display: none;
+    }
+    .schedule__tr {
+        display: flex;
+        flex-direction: column;
+        padding-top: 20px;
+    }
+    .schedule__tr .price-table__td {padding: 0 0 20px;}
+    .schedule__tr .price-table__td:not(:last-child) {border: 0;}
+}
+
