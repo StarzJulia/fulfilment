@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400;1,500&display=swap');
+body {
+    --text-main: #1e000e;
+    --side-padding: 30px;
+    --text-highlighted: #823038;
+    --text-highlighted-light: #DEBA6F;
+    --text-light: #fff;
+
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 16px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.header {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255,255,255,.9);
+    padding: 0 var(--side-padding);
+    display: flex;
+    justify-content: space-between;
+}
+.header-nav__list {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.header-nav__li {display: none;}
+.header-nav__li--main {display: block;}
+.header-nav__link {
+    display: block;
+    height: 100%;
+    box-sizing: border-box;
+    position: relative;
+    padding: 25px 0;
+    color: var(--text-main);
+    text-decoration: none;
+}
+.header-nav__link--active,
+.header-nav__link:hover {
+    color: var(--text-highlighted);
+}
+.header-nav__link--active::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: var(--text-highlighted);
+}
+.header-side {
+    align-self: center;
+    align-items: center;
+    display: flex;
+}
+.header-side__link {
+    color: var(--text-main);
+    text-decoration: none;
+    border: 1px solid var(--text-main);
+    padding: 10px;
+}
+.header-side__link:hover {
+    border-color: var(--text-highlighted);
+    color: var(--text-highlighted);
+}
+.header-side__link-text {display: none;}
+.header-side__offer {
+    padding: 10px;
+    font-size: inherit;
+    background-color: var(--text-highlighted);
+    border: 1px solid var(--text-highlighted);
+    color: var(--text-light);
+    cursor: pointer;
+    margin-right: 10px;
+}
+.header-side__offer:hover {
+    background-color: var(--text-light);
+    color: var(--text-highlighted);
+}
+@media screen and (min-width: 768px) {
+    .header-nav__li {display: list-item;}
+    .header-side__link-text {display: inline;}
+    .header-side__icon {margin-right: 5px;}
+}
+#main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: relative;
+    padding-top: 100px;
+    background-image: url(../images/fulfilment-1.jpg);
+    background-position: 50% 50%;
+    background-size: cover;
+}
+.main-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    background-color: rgba(0,0,0,.7);
+}
+.main-content {
+    z-index: 1;
+    color: var(--text-light);
+    text-align: center;
+}
+.stages {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 0;
+    margin: 0 0 30px;
+    list-style: none;
+    gap: 30px;
+    text-align: left;
+    color: var(--text-main);
+}
+.stages-item {
+    flex: 1 1 1px;
+    padding: 20px;
+    background-color: var(--text-highlighted-light);
+}
+.stages-item p {margin: 0;}
+.stages-item__heading {
+    color: var(--text-highlighted);
+    font-weight: 400;
+}
+@media screen and (min-width: 768px) {
+    .stages {
+        flex-wrap: nowrap;
+        flex-direction: row;
+    }
+    .stages-item__heading {
+        padding-bottom: 20px;
+    }
+}
+.mp-small-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style: none;
+    justify-content: center;
+    padding: 0 10px;
+    margin: 0;
+    column-gap: 10px;
+}
+.mp-small-list__item {
+    align-self: center;
+    flex: 0 0 calc(33% - 10px);
+}
+.mp-small-list__image {width: 100%;}
+@media screen and (min-width: 768px) {
+    .mp-small-list__item {
+        flex: 1 1 0px;
+    }
+}
+.section-content {
+    padding: var(--side-padding);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.section-heading {
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-weight: 100;
+    margin: 0 0 30px;
+}
+.section-heading--highlighted {color: var(--text-highlighted);}
+.benefits-list {
+    margin: 30px 0;
+    padding-left: 20px;;
+}
+.benefits-hint {
+    font-weight: 500;
+}
+.price-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.price-table__td {
+    padding: 15px 0;
+    border: 0;
+    border-bottom: 1px solid var(--text-highlighted);
+}
+.price-table__td--highlighted {
+    color: var(--text-highlighted);
+    text-align: right;
+}
+.mp-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+}
+.mp-list__item {
+    box-sizing: border-box;
+    display: block;
+    align-self: center;
+    flex: 0 0 33%;
+    padding: 0 30px;
+    cursor: pointer;
+    opacity: .5;
+    margin-bottom: 10px;
+}
+@media screen and (min-width: 768px) {
+    .mp-list__item {
+        margin-bottom: 0;
+    }
+}
+.mp-list__item--active {
+    opacity: 1;
+}
+.mp-list__image {
+    width: 100%;
+}
+.mp-content__item {display: none;}
+.mp-content__item--active {
+    display: block;
+}
+.models-list {
+    display: flex;
+    padding: 0;
+    margin: 0 0 30px;
+    list-style: none;
+    gap: 30px;
+}
+.models-list__item {
+    flex: 1 1 1px;
+    padding: 30px;
+    text-align: center;
+    background-color: var(--text-highlighted-light);
+    cursor: pointer;
+    transition: background-color .5s;
+}
+.models-list__item--active {
+    background-color: var(--text-highlighted);
+    color: var(--text-light);
+    position: relative;
+}
+.models-list__item--active:after {
+    content: '';
+    position: absolute;
+    border-bottom: 15px solid var(--text-light);
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    bottom: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.models-content__item {display: none;}
+.models-content__item--active {
+    display: block;
+}
