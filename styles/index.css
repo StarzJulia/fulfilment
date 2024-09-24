@@ -273,3 +273,17 @@ body {
 .models-content__item--active {
     display: block;
 }
+
+.photos-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 10px;
+}
+.photos-item {flex: 0 0 calc(34% - 10px);}
+.photos-item--horizontal {flex: 0 0 66%;}
+.photos-item__image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
