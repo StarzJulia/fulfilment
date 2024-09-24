@@ -60,4 +60,19 @@ window.onload = function() {
     });
 
     modelsItems[0].click();
+
+    // mp small
+    const mpItemsSmall = document.getElementsByClassName('mp-small-list__link');
+
+    Array.from(mpItemsSmall).forEach(function(element) {
+        element.addEventListener("click", function() {
+            const mpName = element.getAttribute('data-mp');
+
+            Array.from(mpItems).forEach(function(item) {
+                if (item.getAttribute('data-mp') === mpName) {
+                    item.click();
+                }
+            });
+        });
+    });
 }
