@@ -98,12 +98,25 @@ body {
     .header-side__link-text {display: inline;}
     .header-side__icon {margin-right: 5px;}
 }
+.section-content {
+    padding: var(--side-padding);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.section-heading {
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-weight: 100;
+    margin: 0 0 30px;
+}
+.section-heading--highlighted {color: var(--text-highlighted);}
 #main {
     width: 100%;
     height: 100%;
     display: flex;
     position: relative;
-    padding-top: 100px;
+    padding-top: 70px;
     background-image: url(../images/fulfilment-1.jpg);
     background-position: 50% 50%;
     background-size: cover;
@@ -115,17 +128,47 @@ body {
     top: 0;
     left: 0;
     z-index: 0;
-    background-color: rgba(0,0,0,.7);
+    background-color: rgba(0,0,0,.8);
 }
 .main-content {
     z-index: 1;
     color: var(--text-light);
     text-align: center;
 }
+@media screen and (min-width: 768px) {
+    .main-content {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+}
+.main-block {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+}
+.main-clock__left {
+    flex: 1;
+    text-align: left;
+}
+.main-clock__text {margin: 30px 0;}
+.main-clock__right {display: none;}
+.main-clock__right-icon {width: 200px;}
+@media screen and (min-width: 768px) {
+    .main-block {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 30px;
+    }
+    .main-clock__left {
+        flex: 0 0 60%;
+    }
+    .main-clock__right {display: block;flex: 1;}
+}
 .stages {
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
-    flex-direction: column;
     padding: 0;
     margin: 0 0 30px;
     list-style: none;
@@ -135,23 +178,33 @@ body {
 }
 .stages-item {
     flex: 1 1 1px;
-    padding: 20px;
-    background-color: var(--text-highlighted-light);
+    /* background-color: var(--text-highlighted-light);
     background-image: url(../images/texture-2.jpg);
-    background-size: cover;
+    background-size: cover; */
+}
+.stages-item__image {
+    padding-bottom: 66%;
+    position: relative;
+}
+.stages-item__image-picture {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
 .stages-item p {margin: 0;}
 .stages-item__heading {
     color: var(--text-highlighted);
     font-weight: 400;
+    padding-top: 20px;
+    text-transform: uppercase;
+    padding-bottom: 20px;
 }
 @media screen and (min-width: 768px) {
     .stages {
         flex-wrap: nowrap;
-        flex-direction: row;
-    }
-    .stages-item__heading {
-        padding-bottom: 20px;
     }
 }
 .mp-small-list {
@@ -174,19 +227,6 @@ body {
         flex: 1 1 0px;
     }
 }
-.section-content {
-    padding: var(--side-padding);
-    max-width: 1000px;
-    margin: 0 auto;
-}
-.section-heading {
-    position: relative;
-    text-transform: uppercase;
-    letter-spacing: 5px;
-    font-weight: 100;
-    margin: 0 0 30px;
-}
-.section-heading--highlighted {color: var(--text-highlighted);}
 .benefits-list {
     margin: 30px 0;
     padding-left: 20px;;
@@ -244,7 +284,7 @@ body {
     padding: 0;
     margin: 0 0 30px;
     list-style: none;
-    gap: 30px;
+    gap: 10px;
 }
 .models-list__item {
     flex: 1 1 1px;
@@ -262,18 +302,23 @@ body {
 .models-list__item--active:after {
     content: '';
     position: absolute;
-    border-bottom: 15px solid var(--text-light);
+    border-top: 15px solid var(--text-highlighted);
     border-left: 15px solid transparent;
     border-right: 15px solid transparent;
-    bottom: -1px;
+    top: 100%;
     left: 50%;
     transform: translateX(-50%);
+    margin-top: -1px;
 }
 .models-content__item {display: none;}
 .models-content__item--active {
     display: block;
 }
-
+@media screen and (min-width: 768px) {
+    .models-list {
+        gap: 30px;
+    }
+}
 .photos-container {
     display: flex;
     flex-wrap: wrap;
