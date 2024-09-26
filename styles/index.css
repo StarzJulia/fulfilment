@@ -3,7 +3,7 @@ body {
     --text-main: #1e000e;
     --side-padding: 30px;
     --text-highlighted: #823038;
-    --text-highlighted-light: #DEBA6F;
+    --text-highlighted-light: #8230380f;
     --text-light: #fff;
 
     font-family: "Roboto", sans-serif;
@@ -28,7 +28,7 @@ body {
     left: 0;
     right: 0;
     background-color: rgba(255,255,255,.9);
-    padding: 0 var(--side-padding);
+    padding: 15px var(--side-padding);
     display: flex;
     justify-content: space-between;
 }
@@ -108,7 +108,7 @@ body {
     text-transform: uppercase;
     letter-spacing: 5px;
     font-weight: 100;
-    margin: 0 0 30px;
+    margin-top: 0;
 }
 .section-heading--highlighted {color: var(--text-highlighted);}
 #main {
@@ -172,15 +172,12 @@ body {
     padding: 0;
     margin: 0 0 30px;
     list-style: none;
-    gap: 30px;
+    gap: 10px;
     text-align: left;
     color: var(--text-main);
 }
 .stages-item {
-    flex: 1 1 1px;
-    /* background-color: var(--text-highlighted-light);
-    background-image: url(../images/texture-2.jpg);
-    background-size: cover; */
+    flex: 0 0 calc(50% - 5px);
 }
 .stages-item__image {
     padding-bottom: 66%;
@@ -205,6 +202,10 @@ body {
 @media screen and (min-width: 768px) {
     .stages {
         flex-wrap: nowrap;
+        gap: 30px;
+    }
+    .stages-item {
+        flex: 1 1 1px;
     }
 }
 .mp-small-list {
@@ -279,16 +280,18 @@ body {
 .mp-content__item--active {
     display: block;
 }
+.models-container {
+
+}
 .models-list {
     display: flex;
     padding: 0;
-    margin: 0 0 30px;
+    margin: 0;
     list-style: none;
-    gap: 10px;
 }
 .models-list__item {
     flex: 1 1 1px;
-    padding: 30px;
+    padding: 20px;
     text-align: center;
     background-color: var(--text-highlighted-light);
     cursor: pointer;
@@ -299,25 +302,16 @@ body {
     color: var(--text-light);
     position: relative;
 }
-.models-list__item--active:after {
-    content: '';
-    position: absolute;
-    border-top: 15px solid var(--text-highlighted);
-    border-left: 15px solid transparent;
-    border-right: 15px solid transparent;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    margin-top: -1px;
+.models-content {
+    border: 2px solid var(--text-highlighted);
+    padding: 20px;
 }
 .models-content__item {display: none;}
 .models-content__item--active {
     display: block;
 }
 @media screen and (min-width: 768px) {
-    .models-list {
-        gap: 30px;
-    }
+    
 }
 .photos-container {
     display: flex;
