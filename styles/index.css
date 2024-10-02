@@ -1,10 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,900;1,400&display=swap');
 body {
-    --text-main: #1e000e;
+    --text-main: #1d1d1b;
+    --text-active: #009b47;
+    --text-highlighted: #00843e;
+    --text-highlighted-light: #f5e814;
+    --text-light: #ffffff;
+    --text-secondary: #a6a9ab;
+
     --side-padding: 30px;
-    --text-highlighted: #823038;
-    --text-highlighted-light: #8230380f;
-    --text-light: #fff;
+    --side-padding-mobile: 20px;
 
     font-family: "Roboto", sans-serif;
     font-weight: 400;
@@ -14,6 +18,7 @@ body {
     margin: 0;
     padding: 0;
 }
+img { max-width: 100%; }
 .container {
     position: relative;
     width: 100%;
@@ -34,20 +39,12 @@ body {
     align-items: center;
 }
 .header-logo {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: var(--text-main);
-    text-transform: uppercase;
-    line-height: 1;
-}
-.header-logo__text {margin-left: 5px;}
-.header-logo__text--hightlited {
     display: block;
-    color: var(--text-highlighted);
+    text-decoration: none;
+    width: 72px;
+    max-height: 28px;
 }
-.header-logo:hover {color: var(--text-highlighted);}
-.header-nav__list {
+/* .header-nav__list {
     display: flex;
     flex-direction: row;
     gap: 20px;
@@ -78,62 +75,63 @@ body {
     right: 0;
     height: 2px;
     background-color: var(--text-highlighted);
-}
+} */
 .header-side {
     display: flex;
 }
 .contract_btn {
     display: inline-block;
-    color: var(--text-main);
+    color: var(--text-light);
     text-decoration: none;
-    border: 1px solid var(--text-main);
+    border: 1px solid var(--text-highlighted);
     padding: 10px 20px;
     white-space: nowrap;
+    background-color: var(--text-highlighted);
 }
 .contract_btn:hover {
-    border-color: var(--text-highlighted);
     color: var(--text-highlighted);
-}
-.contract_btn--highlighted {
-    background-color: var(--text-highlighted);
-    border-color: var(--text-highlighted);
-    color: var(--text-light);
-}
-.contract_btn--highlighted:hover {
     background-color: var(--text-light);
 }
 .header-side__link .contract_btn-text {display: none;}
-.header-side__offer {
-    padding: 10px;
-    font-size: inherit;
-    background-color: var(--text-highlighted);
-    border: 1px solid var(--text-highlighted);
-    color: var(--text-light);
-    cursor: pointer;
-    margin-right: 10px;
-}
-.header-side__offer:hover {
-    background-color: var(--text-light);
-    color: var(--text-highlighted);
-}
 @media screen and (min-width: 768px) {
     .header-nav__li {display: list-item;}
     .header-side__icon {margin-right: 5px;}
     .header-side__link .contract_btn-text {display: inline;}
 }
 .section-content {
-    padding: var(--side-padding);
+    padding: 0 var(--side-padding-mobile);
     max-width: 1000px;
-    margin: 0 auto;
+    width: 100%;
+    margin: 50px auto;
+    box-sizing: border-box;
+}
+@media screen and (min-width: 768px) {
+    .section-content {
+        padding: 0 var(--side-padding);
+    }
 }
 .section-heading {
     position: relative;
     text-transform: uppercase;
-    letter-spacing: 5px;
+    letter-spacing: 3px;
     font-weight: 500;
-    line-height: 1.2;
+    line-height: 1.4;
     margin-top: 0;
     color: var(--text-highlighted);
+}
+.section-heading--h1 {
+    margin-bottom: 1.5em;
+    font-weight: 900;
+}
+.list {
+    list-style: none;
+    margin: 30px 0;
+    padding-left: 0;
+}
+.list__item:before {
+    content: '\2014';
+    color: var(--text-active);
+    margin-right: 10px;
 }
 #main {
     width: 100%;
@@ -141,9 +139,7 @@ body {
     display: flex;
     position: relative;
     padding-top: 70px;
-    background-image: url(../images/fulfilment-1.jpg);
-    background-position: 50% 50%;
-    background-size: cover;
+    background-color: var(--text-main);
 }
 .main-bg {
     position: absolute;
@@ -152,42 +148,30 @@ body {
     top: 0;
     left: 0;
     z-index: 0;
-    background-color: rgba(0,0,0,.8);
+}
+.main-bg__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    filter: brightness(30%)
 }
 .main-content {
     z-index: 1;
     color: var(--text-light);
 }
+.main-content .contract_btn {margin-top: 20px;}
+.main-list__item {margin: .5em 0;}
+.main-content .section-heading {color: var(--text-light);}
 @media screen and (min-width: 768px) {
     .main-content {
-        padding-top: 60px;
-        padding-bottom: 60px;
+        padding-top: 3em;
+        padding-bottom: 3em;
     }
 }
-.main-block {
-    display: flex;
-    flex-direction: column;
-    margin-top: 50px;
-}
-.main-clock__left {
-    flex: 1;
-}
-.main-clock__left .section-heading {color: var(--text-light);}
-.main-clock__text {margin: 30px 0;}
-.main-clock__right {display: none;}
-.main-clock__right-icon {width: 200px;}
-@media screen and (min-width: 768px) {
-    .main-block {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        gap: 30px;
-    }
-    .main-clock__left {
-        flex: 0 0 60%;
-    }
-    .main-clock__right {display: block;flex: 1;text-align: center;}
-}
+
 .stages {
     display: flex;
     flex-direction: row;
@@ -217,10 +201,11 @@ body {
 .stages-item p {margin: 0;}
 .stages-item__heading {
     color: var(--text-highlighted);
-    font-weight: 400;
+    font-weight: 700;
     padding-top: 20px;
     text-transform: uppercase;
-    padding-bottom: 20px;
+    padding-bottom: 5px;
+    letter-spacing: 1px;
 }
 @media screen and (min-width: 768px) {
     .stages {
@@ -231,140 +216,106 @@ body {
         flex: 1 1 1px;
     }
 }
-.mp-small-list {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    list-style: none;
-    justify-content: center;
-    padding: 0 10px;
-    margin: 0;
-    column-gap: 10px;
-}
-.mp-small-list__item {
-    align-self: center;
-    flex: 0 0 calc(33% - 10px);
-}
-.mp-small-list__image {width: 100%;}
-@media screen and (min-width: 768px) {
-    .mp-small-list__item {
-        flex: 1 1 0px;
-    }
-}
-.benefits-list {
-    margin: 30px 0;
-    padding-left: 20px;;
-}
 .benefits-hint {
     font-weight: 500;
-}
-.price-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-.price-table__td {
-    padding: 15px 0;
-    border: 0;
-    border-bottom: 1px solid var(--text-highlighted);
-}
-.price-table__td--highlighted {
-    color: var(--text-highlighted);
-    text-align: right;
-}
-.mp-list {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0;
-    margin: 0;
-}
-.mp-list__item {
-    box-sizing: border-box;
-    display: block;
-    align-self: center;
-    flex: 0 0 33%;
-    padding: 0 30px;
-    cursor: pointer;
-    opacity: .5;
-    margin-bottom: 10px;
-}
-@media screen and (min-width: 768px) {
-    .mp-list__item {
-        margin-bottom: 0;
-    }
-}
-.mp-list__item--active {
-    opacity: 1;
-}
-.mp-list__image {
-    width: 100%;
-}
-.mp-content__item {display: none;}
-.mp-content__item--active {
-    display: block;
-}
-.models-container {
-
-}
-.models-list {
-    display: flex;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-}
-.models-list__item {
-    flex: 1 1 1px;
-    padding: 20px;
-    text-align: center;
-    background-color: var(--text-highlighted-light);
-    cursor: pointer;
-    transition: background-color .5s;
-}
-.models-list__item--active {
-    background-color: var(--text-highlighted);
-    color: var(--text-light);
-    position: relative;
-}
-.models-content {
-    border: 2px solid var(--text-highlighted);
-    padding: 20px;
-}
-.models-content__item {display: none;}
-.models-content__item--active {
-    display: block;
-}
-@media screen and (min-width: 768px) {
-    
 }
 .photos-container {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    gap: 10px;
+    gap: 9px;
+    margin-bottom: 10px;
 }
-.photos-item {flex: 0 0 calc(34% - 10px);}
-.photos-item--horizontal {flex: 0 0 66%;}
+.photos-item {flex: 0 0 calc(20% - 6px);}
+.photos-item--horizontal {flex: 0 0 calc(40% - 6px);}
 .photos-item__image {
     height: 100%;
     width: 100%;
     object-fit: cover;
 }
-.form {
-    margin-bottom: 30px;
+@media screen and (max-width: 767px) {
+    .photos-container {gap: 10px;}
+    .photos-item {flex-basis: calc(33% - 5px);}
+    .photos-item--horizontal {flex-basis: calc(67% - 5px);}
+    .photos-item--horizontal_inline {flex-basis: calc(50% - 5px);}
 }
-.form-fieldset {
-    display: inline-block;
+#footer {
+    background-color: var(--text-main);
+    color: var(--text-light);
+}
+.footer-content {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.footer-content__item {flex: 1 1 1px;}
+.footer-content p {margin: 0 0 5px;}
+.footer-content a {
+    color: inherit;
+    text-decoration: none;
+}
+.footer-content a:hover {color: var(--text-highlighted);}
+.footer-content__item-heading {
+    color: var(--text-active);
+    margin-bottom: 10px;
+    font-weight: 500;
 }
 @media screen and (max-width: 767px) {
-    .schedule__th {
-        display: none;
-    }
-    .schedule__tr {
-        display: flex;
-        flex-direction: column;
-        padding-top: 20px;
-    }
-    .schedule__tr .price-table__td {padding: 0 0 20px;}
-    .schedule__tr .price-table__td:not(:last-child) {border: 0;}
+    .footer-content {flex-wrap: wrap;}
+    .footer-content__info {flex: 1 0 100%;}
 }
-
+.calculator-form {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 10px;
+    row-gap: 20px;
+}
+.calculator-form__fieldset {
+    flex: 1 0 1px;
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+.calculator-form__fieldset--wide {
+    flex: 1 0 100%;
+}
+.calculator-form__input {
+    padding: 15px 10px;
+    border: 1px solid var(--text-secondary);
+    width: 100%;
+    box-sizing: border-box;
+    outline: none;
+}
+.calculator-form__input:hover,
+.calculator-form__input:active,
+.calculator-form__input:focus {
+    border-color: var(--text-highlighted);
+}
+.calculator-form__label {
+    display: block;
+    margin-bottom: 10px;
+}
+.calculator-form__submit {
+    flex: 1;
+    border: 1px solid var(--text-active);
+    background-color: var(--text-active);
+    color: var(--text-light);
+    padding: 20px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 1em;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 500;
+    outline: none;
+    font-size: inherit;
+    letter-spacing: 1px;
+}
+.calculator-form__submit:hover {
+    border: 1px solid var(--text-highlighted);
+    background-color: var(--text-highlighted);
+    color: var(--text-light);
+}

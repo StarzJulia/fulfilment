@@ -1,7 +1,12 @@
 <html>
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
-        <title>Fulfilment. Пункты самовывоза для интернет-магазинов Москвы и Московской области</title>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Фулфилмент. Пункты самовывоза для интернет-магазинов Москвы и Московской области</title>
+        <link rel="shortcut icon" type="image/x-icon" href="./images/favicon.svg">
+        <meta name="description" content="Фулфилмент. Хранение и доставка товаров для интернет-магазинов, отгрузка на маркетплейсы">
+        <meta name="keywords" content="Фулфилмент, доставка, посылки, документы">
         <link rel="stylesheet" href="./styles/index.css" />
         <script src="https://kit.fontawesome.com/f1dea3b69c.js" crossorigin="anonymous"></script>
     </head>
@@ -9,20 +14,8 @@
         <div class="container">
             <header class="header" id="header">
                 <a class="header-logo" href="/">
-                    <span class="header-logo__icon"><i class="header-side__icon fa-solid fa-star"></i></span>
-                    <span class="header-logo__text">
-                        Проверенный 
-                        <span class="header-logo__text--hightlited">фулфилмент</span>
-                    </span>
+                    <img src="./images/CDEK_logo.svg" />
                 </a>
-                <!-- <nav class="header-nav">
-                    <ul class="header-nav__list">
-                        <li class="header-nav__li  header-nav__li--main"><a href="#main" class="header-nav__link header-nav__link--active">
-                            Название
-                        </a></li>
-                        <li class="header-nav__li"><a href="#work" class="header-nav__link">Схема работы</a></li>
-                    </ul>
-                </nav> -->
                 <div class="header-side">
                     <a href="tel:88005553535" class="header-side__link contract_btn">
                         <i class="header-side__icon fa-solid fa-phone"></i>
@@ -31,39 +24,104 @@
                 </div>
             </header>
             <section id="main">
-                <div class="main-bg"></div>
+                <div class="main-bg">
+                    <img class="lazy main-bg__image" data-src="./images/photos/image-hor-2.jpeg"/>
+                </div>
                 <div class="section-content main-content">
-                    <!-- <h1 class="section-heading">Доставка товаров на все популярные маркетплейсы</h1> -->
-                    <div class="main-block">
-                        <div class="main-clock__left">
-                            <h1 class="section-heading">Доставка товаров на все популярные маркетплейсы</h1>
-                            <p class="main-clock__text">Хранение и доставка товаров для интернет-магазинов, отгрузка на маркетплейсы. Оставьте заявку по кнопке ниже, чтобы получить расчет стоимости.</p>
-                            <a href="tel:88005553535" class="contract_btn contract_btn--highlighted">
-                                <span class="contract_btn-text">Заключить договор</span>
-                            </a>
-                        </div>
-                        <div class="main-clock__right">
-                            <img src="./images/boxes-2.svg" class="main-clock__right-icon" />
-                        </div>
+                    <h1 class="section-heading section-heading--h1">Доставка товаров на все популярные маркетплейсы</h1>
+                    <ul class="list main-list">
+                        <li class="list__item main-list__item">Каждый третий интернет-магазин в России выбирает CDEK</li>
+                        <li class="list__item main-list__item">Доставка CDEK по России и миру: в ПВЗ или лично в руки вашему клиенту</li>
+                        <li class="list__item main-list__item">Доставка CDEK. Удобно вам и вашим клиентам. В ПВЗ, постаматы или лично в руки</li>
+                        <li class="list__item main-list__item">Доставка CDEK для интернет-магазинов: готовые решения для роста вашего бизнеса</li>
+                    </ul>
+                    <a href="tel:88005553535" class="contract_btn contract_btn--highlighted">
+                        <span class="contract_btn-text">Заключить договор</span>
+                    </a>
+                </div>
+            </section>
+            <section id="calculator">
+                <div class="section-content">
+                    <h2 class="section-heading section-heading--h1">Калькулятор стоимости доставки</h2>
+                    <div class="calculator">
+                        <form action="" method="GET" class="calculator-form form-container">
+                            <input name="version" value="1.0" hidden />
+                            <input name="dateExecute" value="" hidden />
+                            <!-- id тарифа, Посылка склад-дверь -->
+                            <input name="tariffId" value="137" hidden />
+                            <!-- объём места, длина*ширина*высота, метры кубические -->
+                            <input name="goods[1].volume" value="0.1" hidden />
+
+                            <fieldset class="calculator-form__fieldset">
+                                <label class="calculator-form__label" for="senderCityId">Город-отправитель</label>
+                                <input name="senderCityId" id="senderCityId" class="calculator-form__input" />
+                            </fieldset>
+                            <fieldset class="calculator-form__fieldset">
+                                <label class="calculator-form__label" for="receiverCityId">Город-получатель</label>
+                                <input name="receiverCityId" id="receiverCityId" class="calculator-form__input" />
+                            </fieldset>
+                            <fieldset class="calculator-form__fieldset calculator-form__fieldset--wide calculator-form">
+                                <fieldset class="calculator-form__fieldset calculator-form__fieldset--wide">
+                                    <label class="calculator-form__label" for="weight">Вес, кг.</label>
+                                    <input id="weight" name="goods[0].weight" class="calculator-form__input" />
+                                </fieldset>
+                                <fieldset class="calculator-form__fieldset">
+                                    <label class="calculator-form__label" for="length">Длина, см.</label>
+                                    <input id="length" name="goods[0].length" class="calculator-form__input" />
+                                </fieldset>
+                                <fieldset class="calculator-form__fieldset">
+                                    <label class="calculator-form__label" for="width">Ширина, см.</label>
+                                    <input id="width" name="goods[0].width" class="calculator-form__input" />
+                                </fieldset>
+                                <fieldset class="calculator-form__fieldset">
+                                    <label class="calculator-form__label" for="height">Высота, см.</label>
+                                    <input id="height" name="goods[0].height" class="calculator-form__input" />
+                                </fieldset>
+                            </fieldset>
+                            <button type="submit" class="calculator-form__submit">Посчитать</button>
+                        </form>
                     </div>
                 </div>
             </section>
-            <section>
-                <ul class="mp-small-list">
-                    <li class="mp-small-list__item"><a href="#scheme" data-mp="ozon" class="mp-small-list__link"><img class="mp-small-list__image" alt="Ozon" src="./images/logos/ozon.png" /></a></li>
-                    <li class="mp-small-list__item"><a href="#scheme" data-mp="wildberries" class="mp-small-list__link"><img class="mp-small-list__image" alt="Wildberries" src="./images/logos/wildberries.png" /></a></li>
-                    <li class="mp-small-list__item"><a href="#scheme" data-mp="lamoda" class="mp-small-list__link"><img class="mp-small-list__image" alt="Lamoda" src="./images/logos/lamoda.jpg" /></a></li>
-                    <li class="mp-small-list__item"><a href="#scheme" data-mp="aliexpress" class="mp-small-list__link"><img class="mp-small-list__image" alt="AliExpress" src="./images/logos/aliexpress.png" /></a></li>
-                    <li class="mp-small-list__item"><a href="#scheme" data-mp="golden_apple" class="mp-small-list__link"><img class="mp-small-list__image" alt="Золотое яблоко" src="./images/logos/golden_apple.png" /></a></li>
-                    <li class="mp-small-list__item"><a href="#scheme" data-mp="megamarket" class="mp-small-list__link"><img class="mp-small-list__image" alt="Мегамаркет" src="./images/logos/megamarket.png" /></a></li>
-                    <li class="mp-small-list__item"><a href="#scheme" data-mp="yandex" class="mp-small-list__link"><img class="mp-small-list__image" alt="Яндекс Маркет" src="./images/logos/ya_market.svg" /></a></li>
-                    <li class="mp-small-list__item"><a href="#scheme" data-mp="world" class="mp-small-list__link"><img class="mp-small-list__image" alt="Детский мир" src="./images/logos/mir.png" /></a></li>
-                    <li class="mp-small-list__item"><a href="#scheme" data-mp="kaspi" class="mp-small-list__link"><img class="mp-small-list__image" alt="Kaspi" src="./images/logos/kaspi.png" /></a></li>
-                </ul>
+            <section id="benefits">
+                <div class="section-content">
+                    <h2 class="section-heading section-heading--h1">Преимущества работы с нами</h2>
+                    <ul class="benefits-list list">
+                        <li class="benefits-list__item list__item">Выкупаемость до 95% заказов в зависимости от сферы бизнеса.</li>
+                        <li class="benefits-list__item list__item">Оперативность — доставка по России от 2 дней.</li>
+                        <li class="benefits-list__item list__item">Экономия — отправка по договору от 125 рублей.</li>
+                        <li class="benefits-list__item list__item">Удобство — доставка в пункт выдачи, постамат или лично в руки получателю.</li>
+                        <li class="benefits-list__item list__item">География — уникальная сеть офисов: более 4400 по России и в мире.</li>
+                        <li class="benefits-list__item list__item">Интеграция — бесплатная установка виджета CDEK на сайте.</li>
+                        <li class="benefits-list__item list__item">Поддержка 24/7 — горячая линия, удобное информирование.</li>
+                        <li class="benefits-list__item list__item">Открытость — работа с персональным менеджером по всем вопросам.</li>
+                        <li class="benefits-list__item list__item">Развитие — помощь с выходом на маркетплейсы.</li>
+                        <li class="benefits-list__item list__item">Безграничность — доставка товаров для ваших клиентов за рубежом, импорт и экспорт грузов.</li>
+                    </ul>
+                    <div class="benefits-hint">
+                        <p>Выбирая нас, вы обретаете возможность рационально продавать товары больше, чем на 1 маркетплейсе.</p>
+                        <p>В условиях высокой конкуренции среди продавцов мп обычно выигрывают те, кто может обеспечить ускоренную доставку и быстрее перевезти заказ до ПВЗ клиента. Поэтому продажи и прибыль зависят от логистики. Мы предоставляем все услуги фулфилмента, обеспечиваем транспортировку до складов и ПВЗ и хранение товаров.</p>
+                    </div>
+                </div>
+            </section>
+            <section id="description">
+                <div class="section-content">
+                    <h2 class="section-heading section-heading--h1">Основные услуги</h2>
+                    <ul class="benefits-list list">
+                        <li class="benefits-list__item list__item">Постаматы CDEK. Удобный способ бесконтактно получать посылки</li>
+                        <li class="benefits-list__item list__item">СДЭК Фулфилмент. Хранение и доставка для интернет-магазинов, отгрузка на маркетплейсы</li>
+                        <li class="benefits-list__item list__item">CDEK Media. Ваша видеореклама на экранах в пунктах выдачи CDEK</li>
+                        <li class="benefits-list__item list__item">CDEK Termo. Доставка с сохранением температуры от -196 до +25 °C</li>
+                        <li class="benefits-list__item list__item">CDEK B2B. Международные поставки коммерческих грузов в Россию</li>
+                        <li class="benefits-list__item list__item">CDEK Document. Доставка документов для бизнеса по России и ЕАЭС</li>
+                        <li class="benefits-list__item list__item">СDEK Pay. Сервис для приема всех видов онлайн-платежей</li>
+                        <li class="benefits-list__item list__item">LTL-перевозки. Выгодная доставка сборных грузов</li>
+                    </ul>
+                </div>
             </section>
             <section id="fulfilment-scheme">
                 <div class="section-content">
-                    <h2 class="section-heading">Схема работы фулфилмента</h2>
+                    <h2 class="section-heading section-heading--h1">Схема работы фулфилмента</h2>
                     <ul class="stages">
                         <li class="stages-item">
                             <div class="stages-item__image">
@@ -96,232 +154,63 @@
                     </ul>
                 </div>
             </section>
-            <section id="schedule">
+            <section id="form">
                 <div class="section-content">
-                    <h2 class="section-heading">Направления и графики доставки</h2>
-                    <div class="form">
-                        <div class="form-fieldset">
-                            <label for="city">Город</label>
-                            <select name="city">
-                                <option>Все</option>
-                                <option>Самара</option>
-                                <option>Москва</option>
-                            </select>
+                    <h2 class="section-heading section-heading--h1">Форма обратной связи</h2>
+                    <div class="feedback-form">
+                        <div class="benefits-hint">
+                            <p>Воспользуйтесь услугами CDEK прямо сейчас.</p>
+                            <p>Заполните форму и получите инструкции для заключения договора:</p>
                         </div>
-                        <div class="form-fieldset">
-                            <label for="mp">Маркетплейс</label>
-                            <select name="mp">
-                                <option>Все</option>
-                                <option>Ozon</option>
-                                <option>Wildberries</option>
-                            </select>
-                        </div>
-                    </div>
-                    <table class="price-table">
-                        <tr class="schedule__th">
-                            <th>Маркетплейс</th>
-                            <th>Город</th>
-                            <th>Адрес</th>
-                            <th>График доставки</th>
-                        </tr>
-                        <tr class="price-table__tr schedule__tr">
-                            <td class="price-table__td">OZON Преображенка</td>
-                            <td class="price-table__td">Самара</td>
-                            <td class="price-table__td">с. Преображенка, ул. Индустриальная 1Б</td>
-                            <td class="price-table__td">Понедельник-суббота (с 10:00 до 17:00)</td>
-                        </tr>
-                        <tr class="price-table__tr schedule__tr">
-                            <td class="price-table__td">OZON Преображенка</td>
-                            <td class="price-table__td">Самара</td>
-                            <td class="price-table__td">с. Преображенка, ул. Индустриальная 1Б</td>
-                            <td class="price-table__td">Понедельник-суббота (с 10:00 до 17:00)</td>
-                        </tr>
-                        <tr class="price-table__tr schedule__tr">
-                            <td class="price-table__td">OZON Преображенка</td>
-                            <td class="price-table__td">Самара</td>
-                            <td class="price-table__td">с. Преображенка, ул. Индустриальная 1Б</td>
-                            <td class="price-table__td">Понедельник-суббота (с 10:00 до 17:00)</td>
-                        </tr>
-                    </table>
-                </div>
-            </section>
-            <section id="benefits">
-                <div class="section-content">
-                    <h2 class="section-heading">Наши преимущества</h2>
-                    <ul class="benefits-list">
-                        <li class="benefits-list__item">Без ограничений по количеству, весу и габаритным характеристикам товаров</li>
-                        <li class="benefits-list__item">Склады класса А</li>
-                        <li class="benefits-list__item">Высококвалифицированный персонал</li>
-                        <li class="benefits-list__item">Страхование товаров</li>
-                        <li class="benefits-list__item">Огромный опыт работы в логистике</li>
-                        <li class="benefits-list__item">Работа с крупными маркетплейсами по всем схемам работы - FBO, FBS и DBS.</li>
-                        <li class="benefits-list__item">Удобная интеграция с личным кабинетом</li>
-                        <li class="benefits-list__item">Оплата после оказания услуг</li>
-                        <li class="benefits-list__item">Официальный договор</li>
-                        <li class="benefits-list__item">Возможность учёта расходов на фулфилмент в бухгалтерии.</li>
-                    </ul>
-                    <div class="benefits-hint">
-                        <p>Выбирая нас, вы обретаете возможность рационально продавать товары больше, чем на 1 маркетплейсе.</p>
-                        <p>В условиях высокой конкуренции среди продавцов мп обычно выигрывают те, кто может обеспечить ускоренную доставку и быстрее перевезти заказ до ПВЗ клиента. Поэтому продажи и прибыль зависят от логистики. Мы предоставляем все услуги фулфилмента, обеспечиваем транспортировку до складов и ПВЗ и хранение товаров.</p>
-                    </div>
-                </div>
-            </section>
-            <section id="description">
-                <div class="section-content">
-                    <h2 class="section-heading">О нас</h2>
-                    <div class="description-hint">
-                        <p>Мы работаем в области фулфилмента  с 2020 года - у нас есть удобные и надежные модули по интеграции с популярными маркетплейсами, а также комплекс отработанных решений для интернет-магазинов и розничных продаж через любую площадку.</p>
-                        <p>Оказываем полный цикл услуг: транспортировку на склад, хранение, упаковку, маркировку, сборку заказов и их доставку до покупателя. Предлагаем удобную систему учета - сможете отслеживать количество остатков товара в режиме онлайн через личный кабинет. Подготовим товары перед отправкой на маркетплейсы. Нанесем штрих-коды на каждую единицу, короб и паллет по требованиям определенной площадки. Доставка на Вайлдбериз, Озон, АлиЭкспресс, Яндекс.Маркет, МегаМаркет и другие маркетплейсы.</p>
-                        <p>В распоряжении наших клиентов 30 складов, которые расположены в 25 городах шести стран Европы и СНГ. Личный менеджер, который поддерживает постоянную связь с заказчиком, поможет подобрать оптимальный с точки зрения логистики вариант, и закрепленный оператор, который поддерживает круглосуточную связь для решению любых ваших вопросов.</p>
-                    </div>
-                </div>
-            </section>
-            <section id="work">
-                <div class="section-content">
-                    <h2 class="section-heading">Схема работы с маркетплейсами</h2>
-                    <ul class="mp-list">
-                        <li class="mp-list__item mp-list__item--ozon" data-mp="ozon"><img class="mp-list__image" alt="Ozon" src="./images/logos/ozon.png" /></li>
-                        <li class="mp-list__item mp-list__item--wildberries" data-mp="wildberries"><img class="mp-list__image" alt="Wildberries" src="./images/logos/wildberries.png" /></li>
-                        <li class="mp-list__item mp-list__item--lamoda" data-mp="lamoda"><img class="mp-list__image" alt="Lamoda" src="./images/logos/lamoda.jpg" /></li>
-                        <li class="mp-list__item mp-list__item--aliexpress" data-mp="aliexpress"><img class="mp-list__image" alt="AliExpress" src="./images/logos/aliexpress.png" /></li>
-                        <li class="mp-list__item mp-list__item--golden_apple" data-mp="golden_apple"><img class="mp-list__image" alt="Золотое яблоко" src="./images/logos/golden_apple.png" /></li>
-                        <li class="mp-list__item mp-list__item--megamarket" data-mp="megamarket"><img class="mp-list__image" alt="Мегамаркет" src="./images/logos/megamarket.png" /></li>
-                        <li class="mp-list__item mp-list__item--yandex" data-mp="yandex"><img class="mp-list__image" alt="Яндекс Маркет" src="./images/logos/ya_market.svg" /></li>
-                        <li class="mp-list__item mp-list__item--world" data-mp="world"><img class="mp-list__image" alt="Детский мир" src="./images/logos/mir.png" /></li>
-                        <li class="mp-list__item mp-list__item--kaspi" data-mp="kaspi"><img class="mp-list__image" alt="Kaspi" src="./images/logos/kaspi.png" /></li>
-                    </ul>
-                    <div class="mp-content" id="scheme">
-                        <div class="mp-content__item" data-mp="ozon">
-                            <h3 class="section-heading section-heading--highlighted">Доставка грузов на склады Ozon</h3>
-                            <p>Организуем хранение. Поможем наладить складские операции при торговле со склада маркетплейса (FBO) и со склада продавца (FBS/rFBS). Доставка до складов OZON или до конечного получателя. Бесплатное готовое интеграционное решение.</p>
-                            <h4 class="section-heading">Стоимость FBO-доставки</h4>
-                            <table class="price-table">
-                                <tr class="price-table__tr">
-                                    <td class="price-table__td">Доставка до 20 кг</td>
-                                    <td class="price-table__td price-table__td--highlighted">800 руб.</td>
-                                </tr>
-                                <tr class="price-table__tr">
-                                    <td class="price-table__td">Каждый последующий кг в поставке</td>
-                                    <td class="price-table__td price-table__td--highlighted">6 руб.</td>
-                                </tr>
-                            </table>
-                            <div class="mp-info">
-                                <p>Ozon - второй по масштабу маркетплейс в России: в условиях высокой конкуренции среди продавцов обычно выигрывают те, кто может обеспечить ускоренную доставку и быстрее перевезти заказ до ПВЗ клиента. Поэтому продажи и прибыль зависят от логистики. Мы предоставляем все услуги фулфилмента Ozon - обеспечим транспортировку до складов и ПВЗ и хранение товаров.</p>
-                                <p>Стоимость логистики зависит от схемы работы:</p>
-                                <ul>
-                                    <li>FBO Озон - торговля со склада маркетплейса: доставляем партию продукции до места хранения, предлагаем упаковку товаров;</li>
-                                    <li> отгрузка FBS Озон - хранение на складе продавца и доставка через маркетплейс: перевозим товары на наш склад, упаковываем, маркируем, собираем заказы и передаем Ozon;</li>
-                                    <li> real FBS - хранение и доставка силами продавца: привозим товары на свой склад, упаковываем и организовываем их транспортировку до покупателя.</li>
-                                </ul>
-                                <p> Быстрая сборка и отправка товаров, которую мы обеспечиваем, поможет вам получать больше заказов, а благодаря налаженному процессу транспортировки вы сможете не переживать за сохранность продукции. </p>
-                            </div>
-                        </div>
-                        <div class="mp-content__item" data-mp="golden_apple">
-                            <h3 class="section-heading">Работа с Золотым Яблоком</h3>
-                            <p>Поможем наладить складские операции при торговле со склада маркетплейса. Фиксированные цены на доставку. Подробности ниже.</p>
-                            <h4 class="section-heading">Стоимость FBO-доставки</h4>
-                            <table class="price-table">
-                                <tr class="price-table__tr">
-                                    <td class="price-table__td">Доставка до 20 кг</td>
-                                    <td class="price-table__td price-table__td--highlighted">800 руб.</td>
-                                </tr>
-                                <tr class="price-table__tr">
-                                    <td class="price-table__td">Каждый последующий кг в поставке</td>
-                                    <td class="price-table__td price-table__td--highlighted">6 руб.</td>
-                                </tr>
-                            </table>
-                        </div>
-                        <div class="mp-content__item" data-mp="wildberries">
-                            <h3 class="section-heading">Работа с Wildberries</h3>
-                        </div>
-                        <div class="mp-content__item" data-mp="lamoda">
-                            <h3 class="section-heading">Работа с Lamoda</h3>
-                        </div>
-                        <div class="mp-content__item" data-mp="aliexpress">
-                            <h3 class="section-heading">Работа с Aliexpress</h3>
-                        </div>
-                        <div class="mp-content__item" data-mp="megamarket">
-                            <h3 class="section-heading">Работа с Megamarket</h3>
-                        </div>
-                        <div class="mp-content__item" data-mp="yandex">
-                            <h3 class="section-heading">Работа с Мегамаркет</h3>
-                        </div>
-                        <div class="mp-content__item" data-mp="world">
-                            <h3 class="section-heading">Работа с Детским миром</h3>
-                        </div>
-                        <div class="mp-content__item" data-mp="kaspi">
-                            <h3 class="section-heading">Работа с Kaspi</h3>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section id="models">
-                <div class="section-content">
-                    <h2 class="section-heading">Модели фулфилмента</h2>
-                    <div class="models-container">
-                        <ul class="models-list">
-                            <li class="models-list__item" data-type="fbs"><span class="models-list__content">FBS</span></li>
-                            <li class="models-list__item" data-type="fbo"><span class="models-list__content">FBO</span></li>
-                            <li class="models-list__item" data-type="dbs"><span class="models-list__content">DBS</span></li>
-                        </ul>
-                        <div class="models-content">
-                            <div class="models-content__item" data-type="fbs">
-                                <h3 class="section-heading section-heading--highlighted">Доставка FBS до маркетплейсов</h3>
-                                <p>Fulfillment by Seller - торговля со склада продавца. При такой схеме работы поставщик передает товары на наш склад, мы подготавливаем его к отгрузке и доставляем до маркетплейса по одному/несколько заказов покупателей. Доставка до конечного покупателя осуществляется силами маркетплейса. Комиссия маркетплейса для поставщика снижается.</p>
-                                <h4 class="section-heading">Стоимость FBS-доставки</h4>
-                                <table class="price-table">
-                                    <tr class="price-table__tr">
-                                        <td class="price-table__td">Доставка со склада Фулфилмента до склада маркетплейса (груз до 5кг)</td>
-                                        <td class="price-table__td price-table__td--highlighted">35 руб.</td>
-                                    </tr>
-                                    <tr class="price-table__tr">
-                                        <td class="price-table__td">Прием единицы товара: приемка товара от поставщика, перемер груза, размещение на полке, присвоение вн.артикула, внесение в систему</td>
-                                        <td class="price-table__td price-table__td--highlighted">от 7 руб.</td>
-                                    </tr>
-                                </table>
-                            </div>
-                            <div class="models-content__item" data-type="fbo">
-                                <h3 class="section-heading section-heading--highlighted">Доставка FBO до маркетплейсов</h3>
-                                <p>Схема "Fulfillment by Operator" (FBO) работает так: поставщик отправляет свои товары на склад компании, которая занимается фулфилментом. Эта компания берет на себя все заботы о товарах: хранит их, упаковывает и затем отправляет на маркетплейс. В итоге поставщик не беспокоится о логистике и обработке товара, а компания-оператор этим занимается.</p>
-                                <p>Преимущества доставки до маркетплейсов FBO:</p>
-                                <ul>
-                                    <li> Отсутствие абонентской платы при отправке менее 100 заказов в месяц.</li>
-                                    <li> Полная страховка товаров.</li>
-                                    <li> Сотрудничество начинается с официального договора, а оплата происходит после выполнения услуг.</li>
-                                    <li> Возможность учёта расходов на фулфилмент в бухгалтерии.</li>
-                                    <li> Доставка по всей России, в страны СНГ и за границу.</li>
-                                    <li> Удобное управление заказами через личные кабинеты на маркетплейсах.</li>
-                                </ul>
-                                <p>Мы специализируемся на предоставлении качественных услуг по FBO-доставке товаров на маркетплейсы для юридических лиц. Мы нацелены на сотрудничество с широким кругом клиентов: это могут быть как мелкие предприниматели, так и крупные ритейлеры или интернет-магазины. Наша главная задача – гарантировать оперативную и безопасную доставку продукции до платформ онлайн-торговли.</p>
-                                <h4 class="section-heading">Стоимость FBO-доставки</h4>
-                                <table class="price-table">
-                                    <tr class="price-table__tr">
-                                        <td class="price-table__td">Доставка до 20 кг</td>
-                                        <td class="price-table__td price-table__td--highlighted">800 руб.</td>
-                                    </tr>
-                                    <tr class="price-table__tr">
-                                        <td class="price-table__td">Каждый последующий кг в поставке</td>
-                                        <td class="price-table__td price-table__td--highlighted">6 руб.</td>
-                                    </tr>
-                                </table>
-                            </div>
-                            <div class="models-content__item" data-type="dbs">
-                                <h3 class="section-heading section-heading--highlighted">Доставка DBS до маркетплейсов</h3>
-                                <p>Delivery by seller — схема, при которой маркетплейс выступает в роли витрины для товара, а хранение и доставку до конечного оператора берут фулфилмент и логистические операторы. Эта схема позволяет работать с определенными группами товаров, например, с крупногабаритными. Комиссия маркетплейса в этом случае минимальна.</p>
-                            </div>
-                        </div>
+                        <form action="" method="GET" class="calculator-form form-container">
+                            <fieldset class="calculator-form__fieldset">
+                                <label class="calculator-form__label" for="name">Имя*</label>
+                                <input name="name" id="name" class="calculator-form__input" />
+                            </fieldset>
+                            <fieldset class="calculator-form__fieldset">
+                                <label class="calculator-form__label" for="email">Email*</label>
+                                <input name="email" id="email" class="calculator-form__input" />
+                            </fieldset>
+                            <fieldset class="calculator-form__fieldset calculator-form__fieldset--wide">
+                                <label for="agreement">
+                                    <input type="checkbox" name="agreement" id="agreement" />
+                                    Отправляя сообщение, я принимаю условия <a href="" target="_blank">пользовательского соглашения</a> и даю согласие на обработку своих персональных данных.
+                                </label>
+                            </fieldset>
+                            <button type="submit" class="calculator-form__submit">Отправить</button>
+                        </form>
                     </div>
                 </div>
             </section>
             <section id="photos">
                 <div class="photos-container">
-                    <div class="photos-item"><img src="./images/photos/photo-3.jpg" class="photos-item__image" /></div>
-                    <div class="photos-item photos-item--horizontal"><img src="./images/photos/photo-2.jpg" class="photos-item__image" /></div>
-                    <div class="photos-item photos-item--horizontal"><img src="./images/photos/photo-1.jpg" class="photos-item__image" /></div>
-                    <div class="photos-item"><img src="./images/photos/photo-4.jpg" class="photos-item__image" /></div>
+                    <div class="photos-item"><img data-src="./images/photos/image-ver-4.jpeg" class="photos-item__image lazy" alt="Фото склада." /></div>
+                    <div class="photos-item photos-item--horizontal"><img data-src="./images/photos/image-hor-4.jpeg" class="photos-item__image lazy" alt="Фото склада." /></div>
+                    <div class="photos-item photos-item--horizontal photos-item--horizontal_inline"><img data-src="./images/photos/image-hor-3.jpeg" class="photos-item__image lazy" alt="Фото склада." /></div>
+                    <div class="photos-item photos-item--horizontal photos-item--horizontal_inline"><img data-src="./images/photos/image-hor-2.jpeg" class="photos-item__image lazy" alt="Фото склада." /></div>
+                    <div class="photos-item photos-item--horizontal"><img data-src="./images/photos/image-hor-5.jpeg" class="photos-item__image lazy" alt="Фото склада."/></div>
+                    <div class="photos-item"><img data-src="./images/photos/image-ver-2.jpeg" class="photos-item__image lazy" alt="Фото склада." /></div>
+                </div>
+            </section>
+            <section id="footer">
+                <div class="section-content footer-content">
+                    <div class="footer-content__item footer-content__info">
+                        <p><a href="https://www.cdek.ru/" target="_blank">Официальный сайт CDEK</a></p>
+                        <p><a href="https://www.cdek.ru/ru/oferta/" target="_blank">Договор оферты</a></p>
+                    </div>
+                    <div class="footer-content__item footer-content__contacts">
+                        <p><a href="tel:+74950090405" class="footer-feedback__link footer-feedback__phone">+7 (495) 009 04 05</a></p>
+                        <p><a href="mailto:email@email.com">email@email.com</a></p>
+                    </div>
+                    <div class="footer-content__item">
+                        <div class="footer-content__item-heading">Режим работы:</div>
+                        <p>Пн-Пт: 09:00 - 18:00</p>
+                        <p>Сб-Вс: 11:00 - 15:00</p>
+                    </div>
                 </div>
             </section>
         </div>
     </body>
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@12.2.0/dist/lazyload.min.js"></script>
     <script src="./scripts/main.js"></script>
 </html>
