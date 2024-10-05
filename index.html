@@ -43,7 +43,7 @@
                 <div class="section-content">
                     <h2 class="section-heading section-heading--h1">Калькулятор стоимости доставки</h2>
                     <div class="calculator">
-                        <form action="" method="GET" class="calculator-form form-container">
+                        <form action="" method="GET" class="calculator-form form-container" id="calculator">
                             <input name="version" value="1.0" hidden />
                             <input name="dateExecute" value="" hidden />
                             <!-- id тарифа, Посылка склад-дверь -->
@@ -77,7 +77,7 @@
                                     <input id="height" name="goods[0].height" class="calculator-form__input" />
                                 </fieldset>
                             </fieldset>
-                            <button type="submit" class="calculator-form__submit">Посчитать</button>
+                            <button type="submit" class="calculator-form__submit" disabled>Посчитать</button>
                         </form>
                     </div>
                 </div>
@@ -204,32 +204,28 @@
                             <input name="mp" id="mp" class="calculator-form__input" />
                         </fieldset>
                     </form>
-                    <!-- <table class="price-table">
-                        <tr class="schedule__th">
-                            <th class="price-table__td">Маркетплейс</th>
-                            <th class="price-table__td">Город</th>
-                            <th class="price-table__td">Адрес</th>
-                            <th class="price-table__td">График доставки</th>
-                        </tr>
-                        <tr class="price-table__tr schedule__tr">
-                            <td class="price-table__td">OZON Преображенка</td>
-                            <td class="price-table__td">Самара</td>
-                            <td class="price-table__td">с. Преображенка, ул. Индустриальная 1Б</td>
-                            <td class="price-table__td">Понедельник-суббота (с 10:00 до 17:00)</td>
-                        </tr>
-                        <tr class="price-table__tr schedule__tr">
-                            <td class="price-table__td">OZON Преображенка</td>
-                            <td class="price-table__td">Самара</td>
-                            <td class="price-table__td">с. Преображенка, ул. Индустриальная 1Б</td>
-                            <td class="price-table__td">Понедельник-суббота (с 10:00 до 17:00)</td>
-                        </tr>
-                        <tr class="price-table__tr schedule__tr">
-                            <td class="price-table__td">OZON Преображенка</td>
-                            <td class="price-table__td">Самара</td>
-                            <td class="price-table__td">с. Преображенка, ул. Индустриальная 1Б</td>
-                            <td class="price-table__td">Понедельник-суббота (с 10:00 до 17:00)</td>
-                        </tr>
-                    </table> -->
+                    <table class="table schedule-table">
+                        <tbody class="table__body schedule-table__body">
+                            <tr class="schedule__th">
+                                <th class="table__td">Маркетплейс</th>
+                                <th class="table__td">Город</th>
+                                <th class="table__td">Адрес</th>
+                                <th class="table__td">График доставки</th>
+                            </tr>
+                            <tr class="table__tr schedule__tr">
+                                <td class="table__td schedule__td schedule__td--name"><span class="schedule__td-heading">OZON Преображенка</span></td>
+                                <td class="table__td schedule__td">Самара</td>
+                                <td class="table__td schedule__td">с. Преображенка, ул. Индустриальная 1Б</td>
+                                <td class="table__td schedule__td">Понедельник-суббота (с 10:00 до 17:00)</td>
+                            </tr>
+                            <tr class="table__tr schedule__tr">
+                                <td class="table__td schedule__td schedule__td--name"><span class="schedule__td-heading">OZON Преображенка</span></td>
+                                <td class="table__td schedule__td">Самара</td>
+                                <td class="table__td schedule__td">с. Преображенка, ул. Индустриальная 1Б</td>
+                                <td class="table__td schedule__td">Понедельник-суббота (с 10:00 до 17:00)</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </section>
             <section id="form">
@@ -240,22 +236,26 @@
                             <p>Воспользуйтесь услугами CDEK прямо сейчас.</p>
                             <p>Заполните форму и получите инструкции для заключения договора:</p>
                         </div>
-                        <form action="" method="GET" class="calculator-form form-container">
+                        <br/>
+                        <form action="" method="GET" class="calculator-form form-container" id="main_form">
                             <fieldset class="calculator-form__fieldset">
-                                <label class="calculator-form__label" for="name">Имя*</label>
-                                <input name="name" id="name" class="calculator-form__input" />
+                                <label class="calculator-form__label" for="name">Имя <span class="calculator-form__label-hint">*</span></label>
+                                <input name="name" id="name" class="calculator-form__input main_form__field" required />
                             </fieldset>
                             <fieldset class="calculator-form__fieldset">
-                                <label class="calculator-form__label" for="email">Email*</label>
-                                <input name="email" id="email" class="calculator-form__input" />
+                                <label class="calculator-form__label" for="email">Email <span class="calculator-form__label-hint">*</span></label>
+                                <input name="email" id="email" class="calculator-form__input main_form__field" required />
                             </fieldset>
                             <fieldset class="calculator-form__fieldset calculator-form__fieldset--wide">
                                 <label for="agreement">
-                                    <input type="checkbox" name="agreement" id="agreement" />
-                                    Отправляя сообщение, я принимаю условия <a href="" target="_blank">пользовательского соглашения</a> и даю согласие на обработку своих персональных данных.
+                                    <input type="checkbox" name="agreement" id="agreement" class="main_form__field" required />
+                                    Отправляя сообщение, я принимаю условия <a href="" target="_blank" class="agreement__link">пользовательского соглашения</a> и даю согласие на обработку своих персональных данных.
                                 </label>
                             </fieldset>
-                            <button type="submit" class="calculator-form__submit">Отправить</button>
+                            <div class="calculator-form__buttons">
+                                <p class="message">* Все поля обязательны к заполнению</p>
+                                <button type="submit" class="calculator-form__submit" id="main_form__button" disabled>Отправить</button>
+                            </div>
                         </form>
                     </div>
                 </div>

@@ -185,12 +185,12 @@ strong, b, th {font-weight: 500;}
     padding: 0;
     margin: 0 0 30px;
     list-style: none;
-    gap: 10px;
+    gap: 20px;
     text-align: left;
     color: var(--text-main);
 }
 .stages-item {
-    flex: 0 0 calc(50% - 5px);
+    flex: 0 0 calc(50% - 10px);
 }
 .stages-item__image {
     padding-bottom: 66%;
@@ -304,8 +304,13 @@ strong, b, th {font-weight: 500;}
     display: block;
     margin-bottom: 10px;
 }
-.calculator-form__submit {
+.calculator-form__buttons {
     flex: 1;
+}
+.calculator-form__label-hint, .message {color: var(--text-highlighted)}
+.calculator-form__submit {
+    display: block;
+    width: 100%;
     border: 1px solid var(--text-active);
     background-color: var(--text-active);
     color: var(--text-light);
@@ -313,18 +318,23 @@ strong, b, th {font-weight: 500;}
     text-transform: uppercase;
     text-align: center;
     margin-top: 1em;
-    cursor: pointer;
     font-family: inherit;
     font-weight: 500;
     outline: none;
     font-size: inherit;
     letter-spacing: 1px;
 }
-.calculator-form__submit:hover {
+.calculator-form__submit:not(:disabled):hover {
     border: 1px solid var(--text-highlighted);
     background-color: var(--text-highlighted);
     color: var(--text-light);
+    cursor: pointer;
 }
+.calculator-form__submit:disabled {
+    opacity: .5;
+}
+.agreement__link {color: inherit;}
+.agreement__link:hover {color: var(--text-highlighted);}
 .models-list {
     display: flex;
     padding: 0;
@@ -355,20 +365,34 @@ strong, b, th {font-weight: 500;}
 .models-content__item--active {
     display: block;
 }
-.price-table {
+.table {
     width: 100%;
     border-collapse: collapse;
 }
-.price-table tr:nth-child(odd) {
+.table tr:nth-child(odd) {
     background-color: var(--text-tertiary);
 }
-.price-table__td {
+.table__td {
     padding: 15px 10px;
     border: 0;
 }
-.price-table__td:first-child {text-align: left;}
-.price-table__td--highlighted {
+.table__td:first-child {text-align: left;}
+.table__td--highlighted {
     color: var(--text-highlighted);
     text-align: right;
     width: 25%;
+}
+.schedule__td-heading {color: var(--text-active);}
+@media screen and (max-width: 767px) {
+    .schedule-table {
+        display: block;
+    }
+    .schedule-table__body {display: block;}
+    .schedule__th {display: none;}
+    .schedule__tr {
+        display: flex;
+        flex-direction: column;
+        padding: 10px 0;
+    }
+    .schedule__td {padding: 8px;}
 }
